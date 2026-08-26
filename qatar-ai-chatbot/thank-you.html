@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) — Google Ads (AW-11286965393) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11286965393"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11286965393');
+</script>
+<!-- Event snippet for Book appointment conversion page — fires on every load
+     of this thank-you page (which the form redirects to on successful submit). -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-11286965393/k6ueCPLQrbQcEJHZhYYq'});
+</script>
+
+<!-- Microsoft Clarity — free session-replay & heatmap analytics. Project id
+     x1lxbv7qm1. Dashboard: https://clarity.microsoft.com/ -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x1lxbv7qm1");
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Aligned Tech</title>
+<meta name="description" content="Thank you for reaching out to Aligned Tech. Our AI team will contact you within 1 business hour.">
+<meta name="robots" content="noindex, nofollow">
+<!-- Favicon — point at the root favicon used by the main React site so the
+     browser tab icon is consistent across the subsite. -->
+<link rel="icon" type="image/png" href="/favicon.webp">
+<link rel="apple-touch-icon" href="/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+<style>
+/* ====== TOKENS — match main site dark theme ====== */
+:root{
+  --black:#000;
+  --white:#fff;
+  --text:#e8eef3;
+  --text-muted:#C3CED3;
+  --text-dim:rgba(195,206,211,.55);
+  --blue:#187BCD;
+  --blue-accent:#3182BD;
+  --blue-light:#B7DAEA;
+  --blue-dark:#013851;
+  --surface:#011d2b;
+  --border:rgba(195,206,211,.18);
+  --border-strong:rgba(49,130,189,.45);
+  --radius:18px;
+  --radius-sm:12px;
+  --ease:cubic-bezier(.34,1.3,.64,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  min-height:100vh;
+  background:#000;
+  color:var(--text);
+  line-height:1.6;
+  display:flex;flex-direction:column;
+  position:relative;overflow-x:hidden;
+}
+
+/* Aurora / glow backdrop (same language as AliniaSection on the site) */
+.aurora{position:fixed;inset:0;pointer-events:none;z-index:0}
+.aurora::before,
+.aurora::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;
+  animation:drift 14s ease-in-out infinite;
+}
+.aurora::before{
+  width:640px;height:540px;top:-160px;left:-160px;
+  background:radial-gradient(ellipse,rgba(24,123,205,.3) 0%,transparent 70%);
+}
+.aurora::after{
+  width:520px;height:460px;bottom:-120px;right:-120px;
+  background:radial-gradient(ellipse,rgba(1,56,81,.45) 0%,transparent 70%);
+  animation-delay:-6s;
+}
+.grid-overlay{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(49,130,189,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(49,130,189,.05) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);
+}
+@keyframes drift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  50%{transform:translate(30px,-20px) scale(1.05)}
+}
+
+/* ====== Header ====== */
+header{
+  padding:22px 28px;position:relative;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;
+}
+header a{display:inline-flex;align-items:center}
+header img{height:34px;width:auto;display:block}
+.home-link{
+  color:var(--text-muted);font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;gap:6px;
+  text-decoration:none;transition:color .2s ease;
+}
+.home-link:hover{color:var(--white)}
+
+/* ====== Main card ====== */
+main{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:40px 24px 60px;position:relative;z-index:2;
+}
+.card{
+  position:relative;max-width:640px;width:100%;text-align:center;
+  background:linear-gradient(180deg,rgba(1,29,43,.9),rgba(0,0,0,.7));
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:56px 40px;
+  backdrop-filter:blur(14px);
+  box-shadow:0 40px 100px -30px rgba(24,123,205,.35),0 0 0 1px rgba(255,255,255,.03);
+}
+.card::before{
+  content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(135deg,rgba(24,123,205,.35),transparent 40%,rgba(24,123,205,.2));
+  -webkit-mask:linear-gradient(#000,#000) content-box,linear-gradient(#000,#000);
+  -webkit-mask-composite:xor;mask-composite:exclude;padding:1px;
+  opacity:.6;
+}
+
+/* Success icon */
+.success-icon{
+  width:88px;height:88px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent));
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;font-size:36px;margin-bottom:28px;
+  box-shadow:0 15px 40px -10px rgba(24,123,205,.55),inset 0 1px 0 rgba(255,255,255,.25);
+  animation:pop .6s var(--ease);
+}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+
+h1{
+  font-size:clamp(28px,5vw,42px);
+  font-weight:800;letter-spacing:-.02em;line-height:1.15;
+  margin-bottom:14px;color:var(--white);
+}
+h1 .accent{
+  font-style:italic;font-weight:800;
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent),var(--blue-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.sub{
+  color:var(--text-muted);font-size:16px;line-height:1.7;
+  max-width:480px;margin:0 auto 32px;
+}
+.sub strong{color:var(--white);font-weight:700}
+
+/* Next steps list */
+.next-steps{
+  text-align:left;
+  background:rgba(255,255,255,.025);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:20px 22px;margin-bottom:32px;
+}
+.next-steps h3{
+  font-size:11px;font-weight:700;
+  color:var(--blue-light);
+  text-transform:uppercase;letter-spacing:2.5px;
+  margin-bottom:14px;
+}
+.next-steps ul{list-style:none}
+.next-steps li{
+  padding:8px 0;display:flex;gap:12px;align-items:flex-start;
+  color:var(--text);font-size:14px;line-height:1.55;
+}
+.next-steps li i{
+  color:var(--blue-accent);margin-top:4px;flex-shrink:0;font-size:14px;
+}
+
+.urgent-note{
+  color:var(--text-dim);font-size:13px;letter-spacing:.3px;
+  text-transform:uppercase;font-weight:600;margin-bottom:16px;
+}
+
+/* Actions */
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:999px;
+  font-weight:600;font-size:14px;letter-spacing:.2px;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .25s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent));
+  color:#fff;
+  box-shadow:0 10px 30px -8px rgba(24,123,205,.5);
+}
+.btn-primary:hover{box-shadow:0 14px 36px -8px rgba(24,123,205,.7)}
+.btn-whatsapp{background:#25D366;color:#fff}
+.btn-whatsapp:hover{background:#1ebe5a;box-shadow:0 10px 28px -8px rgba(37,211,102,.5)}
+.btn-ghost{
+  background:rgba(255,255,255,.04);
+  border-color:var(--border);
+  color:var(--text);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--border-strong)}
+
+/* Footer */
+.footer-note{
+  padding:22px;text-align:center;font-size:12px;color:var(--text-dim);
+  position:relative;z-index:2;letter-spacing:.3px;
+}
+
+/* Responsive */
+@media (max-width:560px){
+  .card{padding:40px 24px;border-radius:16px}
+  .success-icon{width:72px;height:72px;font-size:28px}
+  .actions{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"></div>
+<div class="grid-overlay" aria-hidden="true"></div>
+
+<header>
+  <a href="index.html" aria-label="Aligned Tech home">
+    <img src="images/aligned-logo.webp" alt="Aligned Tech">
+  </a>
+  <a href="index.html" class="home-link">
+    <i class="fas fa-arrow-left"></i> Back to site
+  </a>
+</header>
+
+<main>
+  <div class="card">
+    <div class="success-icon" aria-hidden="true"><i class="fas fa-check"></i></div>
+
+    <h1>Thank you! <span class="accent">Your request is in.</span></h1>
+
+    <p class="sub">
+      Our AI specialist team will reach out within <strong>1 business hour</strong>
+      (Sunday–Thursday, GCC hours) to schedule your free 30-minute consultation.
+    </p>
+
+    <div class="next-steps">
+      <h3>What happens next</h3>
+      <ul>
+        <li><i class="fas fa-circle-check"></i> <span>Our team reviews your request and prepares a tailored agenda.</span></li>
+        <li><i class="fas fa-circle-check"></i> <span>We call you on the number you provided to confirm a time.</span></li>
+        <li><i class="fas fa-circle-check"></i> <span>You'll join a free 30-min strategy call with live demos and real use cases.</span></li>
+        <li><i class="fas fa-circle-check"></i> <span>You receive a written proposal with fixed pricing within 48 hours.</span></li>
+      </ul>
+    </div>
+
+    <p class="urgent-note">Need to reach us sooner?</p>
+
+    <div class="actions">
+      <a href="tel:+97466714112" class="btn btn-primary">
+        <i class="fas fa-phone"></i> Call +974 6671 4112
+      </a>
+      <a href="https://wa.me/97466714112?text=Hi%20Aligned%20Tech%2C%20I%20just%20submitted%20the%20form."
+         class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> WhatsApp Now
+      </a>
+      <a href="index.html" class="btn btn-ghost">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </div>
+</main>
+
+<div class="footer-note">© <span id="year"></span> Aligned Tech — Aligning technology with your business.</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

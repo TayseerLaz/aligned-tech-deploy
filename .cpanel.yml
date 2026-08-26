@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/alignedcloud/public_html
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /usr/bin/rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' --exclude='.cpanel-pull-and-publish.sh' ./ "$DEPLOYPATH/"

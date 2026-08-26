@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Block search/filter/query URLs to prevent duplicate-content indexing
+Disallow: /*?s=
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
+
+# Prevent AI training scrapers from ingesting content unless desired
+# Uncomment to opt out:
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /
+
+Host: https://www.aligned-tech.com
+Sitemap: https://www.aligned-tech.com/sitemap.xml

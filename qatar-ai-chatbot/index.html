@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) — Google Ads (AW-11286965393) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11286965393"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11286965393');
+</script>
+
+<!-- Microsoft Clarity — free session-replay & heatmap analytics. Project id
+     x1lxbv7qm1. Dashboard: https://clarity.microsoft.com/ -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x1lxbv7qm1");
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<meta name="theme-color" content="#000000">
+<title>AI & Chatbot Development in Qatar | Aligned Tech — Free Consultation</title>
+<meta name="description" content="Custom AI chatbots, WhatsApp bots & voice AI for Qatar businesses. Arabic + English. Launched in weeks by Aligned Tech. Free 30-min consultation.">
+<meta name="keywords" content="AI chatbot Qatar, chatbot development Doha, AI agent Qatar, WhatsApp chatbot Qatar, AI automation Qatar, Aligned Tech">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.aligned-tech.com/qatar-ai-chatbot/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI & Chatbot Development in Qatar | Aligned Tech">
+<meta property="og:description" content="Custom AI chatbots & automation for Qatar businesses. Arabic + English. Book a free 30-min consultation today.">
+<meta property="og:image" content="images/aligned-logo.webp">
+
+<!-- Favicon — point at the root favicon used by the main React site so the
+     browser tab icon is consistent across www.aligned-tech.com and the
+     /qatar-ai-chatbot/ subsite. -->
+<link rel="icon" type="image/png" href="/favicon.webp">
+<link rel="apple-touch-icon" href="/favicon.webp">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+<!-- Schema.org LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Aligned Tech — AI & Chatbot Development",
+  "image": "https://www.aligned-tech.com/aligned-logo.webp",
+  "url": "https://www.aligned-tech.com/",
+  "telephone": "+97466714112",
+  "priceRange": "$$",
+  "description": "AI & Chatbot development services for businesses in Qatar. WhatsApp bots, voice AI, custom AI agents, and automation in Arabic and English.",
+  "areaServed": [{"@type":"Country","name":"Qatar"}, {"@type":"Country","name":"Lebanon"}, {"@type":"Place","name":"MENA"}],
+  "serviceType": ["AI Chatbot Development","WhatsApp Chatbot","Voice AI","AI Automation","Custom AI Agents"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "90"
+  }
+}
+</script>
+
+<!-- Google Ads conversion helpers (used by inline onclick handlers on phone /
+     WhatsApp / form-submit elements). The base gtag init lives above
+     immediately after <head>. The phone/WhatsApp/lead labels below are still
+     placeholders — they need real conversion labels from Google Ads before
+     they'll be counted. The real Book-appointment conversion fires from
+     thank-you.html after a form submission. -->
+<script>
+  function trackPhoneCall(){
+    gtag('event', 'conversion', {'send_to': 'AW-11286965393/PHONE_CALL_LABEL'});
+  }
+  function trackWhatsApp(){
+    gtag('event', 'conversion', {'send_to': 'AW-11286965393/WHATSAPP_LABEL'});
+  }
+  function trackLeadForm(){
+    gtag('event', 'conversion', {'send_to': 'AW-11286965393/LEAD_FORM_LABEL'});
+  }
+</script>
+
+<style>
+/* ====== DESIGN TOKENS (dark theme, matches main site) ====== */
+:root{
+  --black:#000000;
+  --white:#ffffff;
+  --blue:#187BCD;
+  --blue-dark:#013851;
+  --blue-light:#B7DAEA;
+  /* Dark-theme gray scale — kept the semantic names so section styles
+     below still read naturally: gray-50 is the softest surface, gray-900
+     is the highest-contrast text (now = white). */
+  --gray-50:#0b1420;       /* section-band background */
+  --gray-100:rgba(255,255,255,0.04);
+  --gray-200:rgba(195,206,211,0.18);  /* borders */
+  --gray-400:rgba(195,206,211,0.5);   /* muted text */
+  --gray-600:#C3CED3;                  /* secondary text */
+  --gray-800:#e8eef3;                  /* strong body text */
+  --gray-900:#ffffff;                  /* headings / strongest text */
+  --surface:#011d2b;                   /* card / input background */
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px rgba(0,0,0,.5);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.55);
+  --container:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.6;color:var(--gray-800);
+  background:#000000;overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* ====== UTILITIES ====== */
+.badge-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:999px;
+  background:rgba(58,134,184,.12);color:var(--blue);
+  font-size:13px;font-weight:600;letter-spacing:.3px;
+}
+.badge-pill i{font-size:11px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 28px;border-radius:var(--radius-sm);
+  font-weight:700;font-size:15px;letter-spacing:.2px;
+  transition:all .25s var(--ease);white-space:nowrap;cursor:pointer;
+  border:2px solid transparent;
+}
+.btn-primary{background:var(--blue);color:var(--white)}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 25px rgba(58,134,184,.4)}
+.btn-dark{background:var(--black);color:var(--white)}
+.btn-dark:hover{background:#1a1a1a;transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)}
+.btn-outline:hover{background:var(--white);color:var(--black);border-color:var(--white)}
+.btn-light{background:var(--white);color:var(--black)}
+.btn-light:hover{background:var(--gray-100);transform:translateY(-2px)}
+.btn-whatsapp{background:#25D366;color:var(--white)}
+.btn-whatsapp:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 10px 25px rgba(37,211,102,.4)}
+.btn-block{width:100%}
+.btn-lg{padding:18px 34px;font-size:16px}
+
+section{padding:90px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.section-head h2{
+  font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;
+  letter-spacing:-.02em;margin:14px 0 16px;
+}
+.section-head h2 .accent{color:var(--blue)}
+.section-head p{color:var(--gray-600);font-size:17px}
+
+/* ====== TOP STRIP ====== */
+.top-strip{
+  background:var(--black);color:var(--white);
+  font-size:13px;padding:8px 0;text-align:center;
+}
+.top-strip strong{color:var(--blue-light)}
+.top-strip a{color:var(--white);text-decoration:underline;text-decoration-color:rgba(255,255,255,.4)}
+
+/* ====== HEADER ====== */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:var(--surface);border-bottom:1px solid var(--gray-200);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.scrolled{box-shadow:var(--shadow-sm)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;gap:20px;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:38px;width:auto}
+.logo-text{display:none;font-weight:700;font-size:15px;color:var(--gray-800);line-height:1.2}
+.logo-text small{display:block;font-size:11px;color:var(--gray-600);font-weight:500}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-phone{
+  display:none;align-items:center;gap:8px;
+  font-weight:700;color:var(--gray-900);font-size:15px;
+}
+.header-phone i{color:var(--blue);font-size:16px}
+.btn-header{padding:11px 20px;font-size:14px}
+
+@media(min-width:768px){
+  .logo-text{display:block}
+  .header-phone{display:flex}
+}
+
+/* ====== HERO ====== */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#000 0%,#0b1420 60%,#142537 100%);
+  color:var(--white);padding:70px 0 90px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(ellipse at 15% 20%,rgba(58,134,184,.35) 0%,transparent 50%),
+    radial-gradient(ellipse at 85% 80%,rgba(58,134,184,.2) 0%,transparent 50%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+  pointer-events:none;
+}
+.hero .container{position:relative;z-index:2}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media(min-width:992px){
+  .hero-grid{grid-template-columns:1.15fr 1fr;gap:56px}
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:999px;
+  background:rgba(58,134,184,.15);border:1px solid rgba(58,134,184,.35);
+  color:var(--blue-light);font-size:13px;font-weight:600;
+  margin-bottom:20px;
+}
+.hero-badge i{font-size:10px;color:#4ade80}
+.hero h1{
+  font-size:clamp(32px,5vw,54px);font-weight:900;line-height:1.08;
+  letter-spacing:-.025em;margin-bottom:20px;
+}
+.hero h1 .highlight{
+  background:linear-gradient(90deg,var(--blue-light),#7dc3eb);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.8);
+  margin-bottom:28px;max-width:560px;
+}
+.hero-list{list-style:none;margin-bottom:32px;display:grid;gap:10px}
+.hero-list li{display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.9);font-size:15px}
+.hero-list li i{color:#4ade80;margin-top:4px;flex-shrink:0}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.hero-trust{
+  display:flex;flex-wrap:wrap;gap:24px;align-items:center;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.12);
+}
+.hero-trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:13px}
+.hero-trust-item strong{display:block;color:var(--white);font-size:20px;font-weight:800;line-height:1}
+.hero-trust-item .lbl{font-size:12px;color:rgba(255,255,255,.6)}
+
+/* Hero Form Card */
+.hero-form-card{
+  background:var(--surface);color:var(--gray-900);
+  border-radius:var(--radius);padding:32px 28px;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  position:relative;
+}
+.hero-form-card::before{
+  content:"";position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  border-radius:calc(var(--radius) + 2px);z-index:-1;opacity:.6;
+}
+.form-card-head{margin-bottom:22px}
+.form-card-head h3{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+.form-card-head p{font-size:14px;color:var(--gray-600)}
+.form-row{display:grid;gap:12px;margin-bottom:12px}
+.form-row.two{grid-template-columns:1fr}
+@media(min-width:480px){.form-row.two{grid-template-columns:1fr 1fr}}
+.form-group label{
+  display:block;font-size:13px;font-weight:600;color:var(--gray-800);
+  margin-bottom:6px;
+}
+.form-group label .req{color:#e74c3c}
+.form-control{
+  width:100%;padding:12px 14px;border:1.5px solid var(--gray-200);
+  border-radius:var(--radius-sm);font-size:15px;font-family:inherit;
+  transition:border-color .2s,box-shadow .2s;background:var(--surface);
+}
+.form-control:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(58,134,184,.15)}
+select.form-control{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235a6573' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+textarea.form-control{resize:vertical;min-height:80px}
+.form-privacy{font-size:12px;color:var(--gray-600);margin-top:12px;text-align:center;line-height:1.5}
+.form-privacy i{color:var(--blue);margin-right:4px}
+.form-msg{
+  display:none;padding:12px 14px;border-radius:var(--radius-sm);
+  font-size:14px;margin-bottom:12px;
+}
+.form-msg.success{display:block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.form-msg.error{display:block;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+
+/* ====== LOGO STRIP / INDUSTRIES ====== */
+.industries{background:var(--gray-50);padding:48px 0;border-bottom:1px solid var(--gray-200)}
+.industries-label{text-align:center;color:var(--gray-600);font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px}
+.industries-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px}
+.industry-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;background:var(--surface);border:1px solid var(--gray-200);
+  border-radius:999px;font-size:14px;font-weight:600;color:var(--gray-800);
+}
+.industry-chip i{color:var(--blue)}
+
+/* ====== SERVICES ====== */
+.services{background:#000}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+.service-card{
+  background:var(--surface);border:1px solid var(--gray-200);
+  border-radius:var(--radius);padding:32px 26px;
+  transition:all .3s var(--ease);position:relative;overflow:hidden;
+}
+.service-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-light));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
+}
+.service-card:hover{border-color:var(--blue);transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+  width:54px;height:54px;border-radius:12px;
+  background:linear-gradient(135deg,rgba(58,134,184,.12),rgba(58,134,184,.06));
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:var(--blue);margin-bottom:18px;
+}
+.service-card h3{font-size:19px;font-weight:800;margin-bottom:10px;letter-spacing:-.01em}
+.service-card p{color:var(--gray-600);font-size:14.5px;margin-bottom:14px}
+.service-card ul{list-style:none;display:grid;gap:7px}
+.service-card ul li{font-size:13.5px;color:var(--gray-800);display:flex;align-items:flex-start;gap:8px}
+.service-card ul li i{color:var(--blue);font-size:11px;margin-top:6px;flex-shrink:0}
+
+/* ====== WHY US ====== */
+.why-us{background:var(--gray-50)}
+.why-grid{
+  display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media(min-width:992px){.why-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.why-features{display:grid;gap:24px}
+.why-feature{display:flex;gap:18px;align-items:flex-start}
+.why-feature-icon{
+  flex-shrink:0;width:52px;height:52px;border-radius:12px;
+  background:var(--black);color:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.why-feature h4{font-size:17px;font-weight:700;margin-bottom:6px}
+.why-feature p{color:var(--gray-600);font-size:14.5px}
+.stats-card{
+  background:linear-gradient(135deg,#000 0%,#1a2838 100%);
+  color:var(--white);border-radius:var(--radius);padding:40px 32px;
+  position:relative;overflow:hidden;
+}
+.stats-card::before{
+  content:"";position:absolute;top:-50%;right:-30%;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(58,134,184,.25),transparent 70%);
+}
+.stats-card h3{font-size:22px;margin-bottom:6px;position:relative}
+.stats-card > p{color:rgba(255,255,255,.7);margin-bottom:28px;font-size:14px;position:relative}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.stat-item{text-align:center}
+.stat-num{
+  font-size:clamp(28px,4vw,38px);font-weight:900;color:var(--blue-light);
+  line-height:1;letter-spacing:-.02em;display:block;
+}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,.7);margin-top:6px;display:block}
+
+/* ====== PROCESS ====== */
+.process{background:#000}
+.process-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:24px;counter-reset:step;
+}
+.process-step{
+  padding:28px 24px;border:1px solid var(--gray-200);border-radius:var(--radius);
+  position:relative;counter-increment:step;transition:all .3s var(--ease);
+}
+.process-step:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+.process-step::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;top:-14px;left:24px;
+  background:var(--blue);color:var(--white);
+  padding:4px 12px;border-radius:999px;
+  font-size:12px;font-weight:700;letter-spacing:1px;
+}
+.process-step h4{font-size:17px;font-weight:800;margin:10px 0 8px}
+.process-step p{color:var(--gray-600);font-size:14px}
+.process-step-icon{font-size:28px;color:var(--blue);margin-bottom:4px}
+
+/* ====== TESTIMONIALS ====== */
+.testimonials{background:var(--gray-50)}
+.ceo-quote{
+  max-width:820px;margin:0 auto 48px;text-align:center;
+  padding:40px 32px;background:var(--surface);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);position:relative;
+}
+.ceo-quote::before{
+  content:"\201C";position:absolute;top:-10px;left:30px;
+  font-size:90px;color:var(--blue);opacity:.2;font-family:Georgia,serif;line-height:1;
+}
+.ceo-quote p{font-size:18px;color:var(--gray-800);font-style:italic;margin-bottom:22px;line-height:1.6}
+.ceo-info{display:flex;align-items:center;justify-content:center;gap:14px}
+.ceo-avatar{
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:var(--white);display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:18px;
+}
+.ceo-name{font-weight:800;font-size:16px;text-align:left}
+.ceo-name small{display:block;font-weight:500;color:var(--gray-600);font-size:13px}
+
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;
+}
+.review-card{
+  background:var(--surface);padding:24px;border-radius:var(--radius);
+  border:1px solid var(--gray-200);
+}
+.review-stars{color:#fbbf24;margin-bottom:10px;font-size:14px}
+.review-card p{color:var(--gray-800);font-size:14.5px;margin-bottom:14px}
+.review-author{font-size:13px;color:var(--gray-600);font-weight:600}
+
+/* ====== FAQ ====== */
+.faq{background:#000}
+.faq-list{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq-item{
+  border:1px solid var(--gray-200);border-radius:var(--radius-sm);
+  overflow:hidden;transition:border-color .2s;
+}
+.faq-item.open{border-color:var(--blue)}
+.faq-question{
+  width:100%;padding:18px 22px;display:flex;justify-content:space-between;
+  align-items:center;gap:16px;font-weight:700;font-size:15.5px;
+  text-align:left;color:var(--gray-900);background:var(--surface);
+}
+.faq-question i{color:var(--blue);transition:transform .3s var(--ease);flex-shrink:0}
+.faq-item.open .faq-question i{transform:rotate(45deg)}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height .4s var(--ease);
+  padding:0 22px;color:var(--gray-600);font-size:14.5px;
+}
+.faq-item.open .faq-answer{max-height:400px;padding:0 22px 20px}
+
+/* ====== FINAL CTA ====== */
+.final-cta{
+  background:
+    linear-gradient(135deg,rgba(0,0,0,.85),rgba(11,20,32,.9)),
+    radial-gradient(ellipse at top right,var(--blue-dark),transparent 60%);
+  background-color:var(--black);
+  color:var(--white);position:relative;overflow:hidden;
+}
+.final-cta::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:50px 50px;
+}
+.final-cta .container{position:relative;z-index:2}
+.final-cta-grid{
+  display:grid;grid-template-columns:1fr;gap:40px;align-items:center;
+}
+@media(min-width:992px){.final-cta-grid{grid-template-columns:1fr 1fr;gap:56px}}
+.final-cta h2{font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+.final-cta h2 .highlight{color:var(--blue-light)}
+.final-cta p{color:rgba(255,255,255,.8);font-size:17px;margin-bottom:28px;max-width:520px}
+.final-cta-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
+.guarantees{display:grid;gap:12px}
+.guarantee{display:flex;gap:12px;align-items:center;color:rgba(255,255,255,.9);font-size:14px}
+.guarantee i{color:#4ade80}
+
+/* ====== FOOTER ====== */
+.site-footer{background:#050709;color:rgba(255,255,255,.7);padding:50px 0 24px}
+.footer-grid{
+  display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:36px;
+}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand img{height:36px;margin-bottom:14px;filter:brightness(1.1)}
+.footer-brand p{font-size:14px;max-width:340px;margin-bottom:14px}
+.footer-col h5{color:var(--white);font-size:14px;font-weight:700;margin-bottom:14px;letter-spacing:.5px;text-transform:uppercase}
+.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(255,255,255,.65);margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--blue-light)}
+.footer-col i{color:var(--blue);margin-right:8px;width:16px}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding-top:20px;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  font-size:12.5px;color:rgba(255,255,255,.5);
+}
+.footer-bottom a{color:rgba(255,255,255,.6)}
+.footer-bottom a:hover{color:var(--blue-light)}
+
+/* ====== MOBILE STICKY CTA ====== */
+.mobile-cta-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:var(--surface);border-top:1px solid var(--gray-200);
+  padding:10px 12px;gap:8px;box-shadow:0 -6px 20px rgba(0,0,0,.08);
+}
+.mobile-cta-bar .btn{flex:1;padding:13px 10px;font-size:14px}
+@media(max-width:767px){
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:72px}
+  section{padding:60px 0}
+  .header-cta .btn-header{padding:10px 14px;font-size:13px}
+}
+
+/* ====== WHATSAPP FLOATING ====== */
+.whatsapp-float{
+  position:fixed;bottom:90px;right:18px;z-index:89;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;box-shadow:0 8px 24px rgba(37,211,102,.4);
+  transition:transform .25s var(--ease);
+}
+.whatsapp-float:hover{transform:scale(1.08)}
+@media(min-width:768px){.whatsapp-float{bottom:24px;right:24px}}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.reveal{opacity:0}
+.reveal.visible{animation:fadeInUp .7s var(--ease) forwards}
+
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}
+  50%{box-shadow:0 0 0 8px rgba(74,222,128,0)}
+}
+.live-dot{
+  width:8px;height:8px;border-radius:50%;background:#4ade80;
+  animation:pulse 2s infinite;display:inline-block;
+}
+
+/* ============================================================
+   DARK POLISH — final theme sync with the main Aligned Tech site.
+   Goes last so it overrides any earlier legacy rules.
+   ============================================================ */
+
+/* Global text defaults */
+body{color:var(--gray-800);background:#000}
+h1,h2,h3,h4,h5{color:var(--white)}
+a{color:var(--white)}
+
+/* Inputs: light text, subtle border, dark surface */
+.form-control{
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid var(--border,rgba(195,206,211,.18)) !important;
+  color:var(--white) !important;
+}
+.form-control::placeholder{color:rgba(195,206,211,.45)}
+.form-control:focus{
+  border-color:var(--blue) !important;
+  box-shadow:0 0 0 3px rgba(24,123,205,.22) !important;
+  background:rgba(255,255,255,.06) !important;
+}
+select.form-control{
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23B7DAEA' d='M6 8L0 0h12z'/%3E%3C/svg%3E") !important;
+  background-repeat:no-repeat !important;background-position:right 14px center !important;
+}
+/* Dropdown options need explicit dark background — without this the browser
+   renders the popup with its default white background while options inherit
+   the white text color from .form-control, making them invisible until
+   hovered. */
+.form-control option,
+select.form-control option{
+  background-color:#011d2b !important;
+  color:#ffffff !important;
+}
+.form-group label{color:var(--gray-800) !important}
+
+/* Form status messages — dark-compatible */
+.form-msg.success{
+  background:rgba(74,222,128,.08) !important;
+  color:#86efac !important;
+  border:1px solid rgba(74,222,128,.25) !important;
+}
+.form-msg.error{
+  background:rgba(239,68,68,.08) !important;
+  color:#fca5a5 !important;
+  border:1px solid rgba(239,68,68,.25) !important;
+}
+
+/* Card surfaces — glass treatment */
+.hero-form-card,
+.service-card,
+.industry-chip,
+.ceo-quote,
+.review-card,
+.faq-item,
+.site-header{
+  background:rgba(1,29,43,.65) !important;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--border) !important;
+}
+
+/* Site header: translucent on scroll */
+.site-header{
+  background:rgba(0,0,0,.55) !important;
+  border-bottom:1px solid var(--border) !important;
+}
+.site-header.scrolled{
+  background:rgba(0,0,0,.8) !important;
+  border-bottom-color:rgba(49,130,189,.2) !important;
+}
+
+/* Service card hover */
+.service-card:hover{
+  background:rgba(1,29,43,.85) !important;
+  border-color:var(--border-strong,rgba(49,130,189,.45)) !important;
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px -20px rgba(24,123,205,.35);
+}
+
+/* Industry chips */
+.industry-chip{color:var(--white) !important}
+.industry-chip:hover{border-color:rgba(49,130,189,.5) !important}
+
+/* Testimonial/FAQ band surfaces */
+.industries,
+.why-us,
+.testimonials{
+  background:linear-gradient(180deg,#000 0%,#050e18 100%) !important;
+}
+
+/* CEO quote + reviews */
+.ceo-quote p,.review-card p{color:var(--text-muted,#C3CED3) !important}
+.review-author,.review-card strong{color:var(--white) !important}
+
+/* FAQ accordion buttons */
+.faq-question{
+  background:rgba(1,29,43,.65) !important;
+  color:var(--white) !important;
+  border:1px solid var(--border) !important;
+}
+.faq-question:hover{background:rgba(1,29,43,.9) !important}
+
+/* All buttons → pill (matches main site) */
+.btn{border-radius:999px !important;font-weight:600 !important;letter-spacing:.2px}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent,#3182BD)) !important;
+  box-shadow:0 10px 30px -10px rgba(24,123,205,.55);
+}
+.btn-primary:hover{
+  background:linear-gradient(135deg,var(--blue-accent,#3182BD),var(--blue)) !important;
+  box-shadow:0 14px 36px -10px rgba(24,123,205,.7);
+}
+.btn-dark{background:rgba(255,255,255,.06) !important;border:1px solid var(--border) !important}
+.btn-dark:hover{background:rgba(255,255,255,.12) !important}
+.btn-outline{border:1px solid var(--border) !important;background:rgba(255,255,255,.02) !important}
+.btn-outline:hover{background:rgba(255,255,255,.08) !important;color:var(--white) !important;border-color:var(--border-strong,rgba(49,130,189,.45)) !important}
+.btn-light{background:var(--white) !important;color:var(--black) !important}
+
+/* Section heads */
+.section-head h2{color:var(--white) !important}
+.section-head h2 .accent{
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent,#3182BD),var(--blue-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-style:italic;
+}
+.section-head p{color:var(--gray-600) !important}
+
+/* Process steps */
+.step-number{
+  background:linear-gradient(135deg,var(--blue),var(--blue-accent,#3182BD)) !important;
+  color:#fff !important;
+  box-shadow:0 10px 25px -10px rgba(24,123,205,.5);
+}
+
+/* Footer — slightly lifted from pure black */
+.site-footer{background:#030609 !important;color:var(--gray-600) !important}
+.site-footer h4,.site-footer strong{color:var(--white) !important}
+.site-footer a{color:var(--gray-600) !important}
+.site-footer a:hover{color:var(--blue-light) !important}
+
+/* Top strip — subtle */
+.top-strip{background:#030609 !important;border-bottom:1px solid var(--border) !important}
+
+/* Mobile sticky bottom bar */
+.mobile-bottom-bar{
+  background:rgba(0,0,0,.92) !important;
+  backdrop-filter:blur(14px);
+  border-top:1px solid var(--border) !important;
+}
+</style>
+</head>
+<body>
+
+<!-- Top Strip -->
+<div class="top-strip">
+  <div class="container">
+    <span class="live-dot"></span>&nbsp;
+    <strong>Now serving Qatar businesses</strong> — Free 30-minute AI consultation &nbsp;|&nbsp;
+    <a href="tel:+97466714112" onclick="trackPhoneCall()"><i class="fas fa-phone"></i> +974 6671 4112</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#top" class="logo" aria-label="Aligned Tech home">
+        <img src="images/aligned-logo.webp" alt="Aligned Tech logo">
+        <div class="logo-text">Aligned Tech<small>AI &amp; Chatbot Development</small></div>
+      </a>
+      <div class="header-cta">
+        <a href="tel:+97466714112" class="header-phone" onclick="trackPhoneCall()">
+          <i class="fas fa-phone"></i> +974 6671 4112
+        </a>
+        <a href="#lead-form" class="btn btn-primary btn-header">
+          <i class="fas fa-calendar-check"></i>
+          <span>Book Free Call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-circle"></i> Trusted AI Partner for MENA &amp; Qatar</span>
+        <h1>Launch Your Business's <span class="highlight">AI Chatbot &amp; AI Agent</span> in Weeks — Not Months</h1>
+        <p class="hero-sub">
+          Aligned Tech builds custom AI chatbots, WhatsApp bots, voice AI, and AI automation
+          for Qatar businesses — fluent in <strong style="color:#fff">Arabic &amp; English</strong>,
+          deployed to your website, WhatsApp, or CRM.
+        </p>
+        <ul class="hero-list">
+          <li><i class="fas fa-check-circle"></i> 24/7 customer support that converts visitors into leads</li>
+          <li><i class="fas fa-check-circle"></i> Arabic + English conversational AI trained on your business</li>
+          <li><i class="fas fa-check-circle"></i> Integrates with WhatsApp, Instagram, your CRM &amp; ERP</li>
+          <li><i class="fas fa-check-circle"></i> Go live in 2–4 weeks with dedicated MENA support team</li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="tel:+97466714112" class="btn btn-light btn-lg" onclick="trackPhoneCall()">
+            <i class="fas fa-phone-volume"></i> Call Now
+          </a>
+          <a href="https://wa.me/97466714112?text=Hi%20Aligned%20Tech%2C%20I%27m%20interested%20in%20AI%20chatbot%20development%20for%20my%20business%20in%20Qatar."
+             class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" onclick="trackWhatsApp()">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><div><strong>13+</strong><span class="lbl">Years Experience</span></div></div>
+          <div class="hero-trust-item"><div><strong>200+</strong><span class="lbl">Projects Delivered</span></div></div>
+          <div class="hero-trust-item"><div><strong>90+</strong><span class="lbl">5-Star Reviews</span></div></div>
+        </div>
+      </div>
+
+      <!-- Lead Form Card -->
+      <div class="hero-form-card" id="lead-form">
+        <div class="form-card-head">
+          <h3>Book a Free AI Consultation</h3>
+          <p>Tell us about your business — we'll show you exactly how AI can grow it.</p>
+        </div>
+        <div class="form-msg" id="formSuccess" style="display:none" role="status" aria-live="polite">
+          <i class="fas fa-check-circle"></i> <strong>Thank you!</strong> Our team will reach out within 1 business hour.
+        </div>
+        <div class="form-msg" id="formError" style="display:none" role="alert" aria-live="assertive">
+          <i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or call us directly.
+        </div>
+        <form id="leadForm" novalidate>
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="full_name">Full Name <span class="req">*</span></label>
+              <input type="text" id="full_name" name="full_name" class="form-control" required placeholder="Ahmed Al-Thani">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+974 XXXX XXXX">
+            </div>
+          </div>
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="email">Business Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" class="form-control" placeholder="Your company">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service_interest">I'm interested in <span class="req">*</span></label>
+              <select id="service_interest" name="service_interest" class="form-control" required>
+                <option value="">Select a service…</option>
+                <option>AI Chatbot Development</option>
+                <option>WhatsApp &amp; Omnichannel Bots</option>
+                <option>Custom AI Agents</option>
+                <option>Voice AI Solutions</option>
+                <option>AI Integrations &amp; Automation</option>
+                <option>Not sure - need consultation</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="message">Briefly, what do you want to achieve?</label>
+              <textarea id="message" name="message" class="form-control" rows="3" placeholder="e.g. Automate customer support on WhatsApp in Arabic &amp; English"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> <span>Get My Free Consultation</span>
+          </button>
+          <p class="form-privacy">
+            <i class="fas fa-lock"></i> Your information is 100% confidential. We reply within 1 business hour.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="industries">
+  <div class="container">
+    <div class="industries-label">Trusted by Qatar businesses across industries</div>
+    <div class="industries-grid">
+      <div class="industry-chip"><i class="fas fa-store"></i> Retail &amp; E-commerce</div>
+      <div class="industry-chip"><i class="fas fa-building"></i> Real Estate</div>
+      <div class="industry-chip"><i class="fas fa-hospital"></i> Healthcare &amp; Clinics</div>
+      <div class="industry-chip"><i class="fas fa-hotel"></i> Hospitality</div>
+      <div class="industry-chip"><i class="fas fa-landmark"></i> Government &amp; Semi-Gov</div>
+      <div class="industry-chip"><i class="fas fa-graduation-cap"></i> Education</div>
+      <div class="industry-chip"><i class="fas fa-briefcase"></i> Professional Services</div>
+      <div class="industry-chip"><i class="fas fa-truck"></i> Logistics</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill"><i class="fas fa-robot"></i> Our AI Services</span>
+      <h2>Complete <span class="accent">AI &amp; Chatbot Solutions</span> for Your Business</h2>
+      <p>From lead-capturing chatbots to full AI automation, we build the tools that save your team hours every week and turn more visitors into customers.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-comments"></i></div>
+        <h3>AI Chatbot Development</h3>
+        <p>Custom-trained chatbots that understand your products, answer FAQs, and qualify leads 24/7.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> GPT / Claude / open-source LLMs</li>
+          <li><i class="fas fa-chevron-right"></i> Trained on your docs &amp; website</li>
+          <li><i class="fas fa-chevron-right"></i> Web, mobile &amp; app deployment</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp &amp; Omnichannel Bots</h3>
+        <p>Engage customers where they already are — WhatsApp Business API, Instagram, Messenger &amp; more.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Official WhatsApp Business API</li>
+          <li><i class="fas fa-chevron-right"></i> Broadcasts &amp; automated replies</li>
+          <li><i class="fas fa-chevron-right"></i> Arabic &amp; English NLU</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-user-astronaut"></i></div>
+        <h3>Custom AI Agents</h3>
+        <p>Autonomous agents that handle bookings, quotes, onboarding, and complex multi-step tasks.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Connects to your CRM &amp; tools</li>
+          <li><i class="fas fa-chevron-right"></i> Takes actions, not just answers</li>
+          <li><i class="fas fa-chevron-right"></i> Human handoff when needed</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-microphone-lines"></i></div>
+        <h3>Voice AI Solutions</h3>
+        <p>AI voice assistants for inbound calls, appointment booking, and IVR — in Arabic &amp; English.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Natural voice conversations</li>
+          <li><i class="fas fa-chevron-right"></i> Qatar-Arabic dialect support</li>
+          <li><i class="fas fa-chevron-right"></i> Twilio / SIP integrations</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-gears"></i></div>
+        <h3>AI Integrations &amp; Automation</h3>
+        <p>Plug AI into your existing tools — Salesforce, HubSpot, Zoho, Odoo, SAP, custom ERPs.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Workflow automation</li>
+          <li><i class="fas fa-chevron-right"></i> Document &amp; email processing</li>
+          <li><i class="fas fa-chevron-right"></i> API &amp; webhook integrations</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>AI Strategy &amp; Consulting</h3>
+        <p>Not sure where to start? We audit your business and build a clear, ROI-focused AI roadmap.</p>
+        <ul>
+          <li><i class="fas fa-chevron-right"></i> Opportunity assessment</li>
+          <li><i class="fas fa-chevron-right"></i> Use-case prioritization</li>
+          <li><i class="fas fa-chevron-right"></i> Vendor-neutral advice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="badge-pill"><i class="fas fa-award"></i> Why Aligned Tech</span>
+        <h2 style="font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:14px 0 16px">
+          MENA-based expertise. <span style="color:var(--blue)">Qatar-ready delivery.</span>
+        </h2>
+        <p style="color:var(--gray-600);font-size:16px;margin-bottom:32px">
+          We're not a generic offshore dev shop. We're a regional team that understands
+          your market, language, compliance needs, and how Qatar businesses actually operate.
+        </p>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feature-icon"><i class="fas fa-language"></i></div>
+            <div>
+              <h4>True Arabic + English AI</h4>
+              <p>Native Arabic dialect handling — not just translated English bots. Trained for Gulf customers.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h4>2–4 Week Delivery</h4>
+              <p>Proven process. Most chatbot projects go live in under a month — with weekly progress calls.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon"><i class="fas fa-shield-halved"></i></div>
+            <div>
+              <h4>Enterprise-Grade Security</h4>
+              <p>Data hosted in compliant regions. GDPR-ready. We sign NDAs before the first call.</p>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon"><i class="fas fa-headset"></i></div>
+            <div>
+              <h4>Same-Timezone Support</h4>
+              <p>Direct WhatsApp line to your project lead — Sunday to Thursday, GCC business hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-card">
+        <h3>Real numbers. Real results.</h3>
+        <p>13+ years building technology for the MENA region.</p>
+        <div class="stats-grid">
+          <div class="stat-item"><span class="stat-num" data-count="13">0</span>+<span class="stat-lbl">Years Experience</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="200">0</span>+<span class="stat-lbl">Projects Delivered</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="90">0</span>+<span class="stat-lbl">5-Star Reviews</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="24">0</span>/7<span class="stat-lbl">Bot Uptime</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="2">0</span>–4<span class="stat-lbl">Weeks to Launch</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="100">0</span>%<span class="stat-lbl">Client Retention</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill"><i class="fas fa-route"></i> How We Work</span>
+      <h2>From idea to live AI — in <span class="accent">4 simple steps</span></h2>
+      <p>A proven, transparent process. You know exactly what happens, when, and why.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-icon"><i class="fas fa-phone-volume"></i></div>
+        <h4>Discovery Call</h4>
+        <p>Free 30-min call. We understand your goals, audience, and the problem you want AI to solve.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon"><i class="fas fa-pen-ruler"></i></div>
+        <h4>Strategy &amp; Design</h4>
+        <p>We map conversations, data sources, integrations, and a clear scope with fixed pricing.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon"><i class="fas fa-code"></i></div>
+        <h4>Build &amp; Train</h4>
+        <p>Our team builds, trains on your content, and QA-tests with real Arabic &amp; English scenarios.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-icon"><i class="fas fa-rocket"></i></div>
+        <h4>Deploy &amp; Optimize</h4>
+        <p>Go live. We monitor, tune, and iterate weekly so your AI keeps getting smarter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill"><i class="fas fa-star"></i> Real Reviews</span>
+      <h2>Trusted by businesses who value <span class="accent">results over promises</span></h2>
+    </div>
+
+    <div class="ceo-quote">
+      <p>"Technology should never be a barrier, it should be the bridge that connects your vision to real results. At Aligned, we don't just implement solutions; we become part of your team, understand your challenges, and build technology that grows with you."</p>
+      <div class="ceo-info">
+        <div class="ceo-avatar">MI</div>
+        <div class="ceo-name">Maysam Ismail<small>Chief Executive Officer, Aligned Tech</small></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Exceptional team, very responsive and knowledgeable. They solve our issues quickly and provide great cloud and IT support."</p>
+        <div class="review-author">— Verified Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"Outstanding support. The team is extremely proactive and always finds solutions quickly. Rare to find such dependable and attentive service."</p>
+        <div class="review-author">— Verified Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"An incredibly professional and friendly team! They provided efficient solutions tailored to my business needs and delivered everything promptly."</p>
+        <div class="review-author">— Verified Client Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>"A top-notch team of professionals that I would recommend to anyone who needs cloud services and IT solutions. Highly recommended 👏"</p>
+        <div class="review-author">— Verified Client Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill"><i class="fas fa-circle-question"></i> FAQ</span>
+      <h2>Frequently asked <span class="accent">questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How long does it take to build an AI chatbot?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer"><p style="padding-top:8px">Most standard chatbots go live in <strong>2–4 weeks</strong>. Simple FAQ bots can launch in 7–10 days. Complex AI agents with deep integrations may take 6–8 weeks. You'll get a clear timeline after your free discovery call.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Does the chatbot understand Arabic?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer"><p style="padding-top:8px">Yes — fluently. We build bots that handle <strong>Modern Standard Arabic, Gulf dialect, and English</strong>, including code-switching (mixing Arabic &amp; English in the same message), which is common in Qatar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can the bot connect to my CRM or WhatsApp?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer"><p style="padding-top:8px">Absolutely. We integrate with <strong>WhatsApp Business API, Salesforce, HubSpot, Zoho, Odoo, Microsoft Dynamics, SAP, Google Sheets, custom APIs</strong>, and more. If it has an API, we can connect it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Who owns the chatbot and the data?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer"><p style="padding-top:8px"><strong>You own everything</strong> — the code, the training data, the conversations. We can host it, or hand it over to your team. Full NDAs and data processing agreements available.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do you provide ongoing support after launch?</span>
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-answer"><p style="padding-top:8px">Yes. All projects include <strong>30 days of free support</strong>, and monthly care plans start at $299/mo for monitoring, updates, and continuous training improvements.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <div class="final-cta-grid">
+      <div>
+        <span class="badge-pill" style="background:rgba(58,134,184,.2);color:var(--blue-light)">
+          <i class="fas fa-bolt"></i> Limited Consultation Slots
+        </span>
+        <h2 style="margin-top:14px">Ready to see what AI can do for your <span class="highlight">Qatar business?</span></h2>
+        <p>Book a free 30-minute strategy call. We'll review your business, show you 2–3 real AI use cases, and give you a clear next step — no pressure, no sales pitch.</p>
+        <div class="final-cta-actions">
+          <a href="tel:+97466714112" class="btn btn-primary btn-lg" onclick="trackPhoneCall()">
+            <i class="fas fa-phone-volume"></i> Call +974 6671 4112
+          </a>
+          <a href="https://wa.me/97466714112?text=Hi%20Aligned%20Tech%2C%20I%27d%20like%20to%20book%20a%20free%20AI%20consultation."
+             class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" onclick="trackWhatsApp()">
+            <i class="fab fa-whatsapp"></i> WhatsApp Now
+          </a>
+        </div>
+        <div class="guarantees">
+          <div class="guarantee"><i class="fas fa-check-circle"></i> Free 30-minute consultation — no obligations</div>
+          <div class="guarantee"><i class="fas fa-check-circle"></i> NDA signed before any project detail is shared</div>
+          <div class="guarantee"><i class="fas fa-check-circle"></i> Fixed-price quotes — no hidden fees</div>
+          <div class="guarantee"><i class="fas fa-check-circle"></i> Same-day response during GCC business hours</div>
+        </div>
+      </div>
+
+      <!-- Secondary form -->
+      <div class="hero-form-card" style="margin:0">
+        <div class="form-card-head">
+          <h3>Prefer we reach out to you?</h3>
+          <p>Drop your details and we'll call back within 1 business hour.</p>
+        </div>
+        <div class="form-msg" id="formSuccess2" style="display:none" role="status" aria-live="polite"><i class="fas fa-check-circle"></i> <strong>Thank you!</strong> We'll be in touch shortly.</div>
+        <div class="form-msg" id="formError2" style="display:none" role="alert" aria-live="assertive"><i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again.</div>
+        <form id="leadForm2" novalidate>
+          <div class="form-row two">
+            <div class="form-group">
+              <label for="full_name2">Name <span class="req">*</span></label>
+              <input type="text" id="full_name2" name="full_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="phone2">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone2" name="phone" class="form-control" required placeholder="+974…">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email2">Business Email <span class="req">*</span></label>
+              <input type="email" id="email2" name="email" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service_interest2">Service Interest <span class="req">*</span></label>
+              <select id="service_interest2" name="service_interest" class="form-control" required>
+                <option value="">Select…</option>
+                <option>AI Chatbot Development</option>
+                <option>WhatsApp &amp; Omnichannel Bots</option>
+                <option>Custom AI Agents</option>
+                <option>Voice AI Solutions</option>
+                <option>AI Integrations &amp; Automation</option>
+                <option>Not sure - need consultation</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            <i class="fas fa-paper-plane"></i> Request Call Back
+          </button>
+          <p class="form-privacy"><i class="fas fa-lock"></i> 100% confidential. No spam. Ever.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/aligned-logo.webp" alt="Aligned Tech">
+        <p>AI &amp; chatbot development, cloud services, and enterprise technology for MENA, GCC, and Africa. Aligning technology with your business.</p>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <a href="https://lb.linkedin.com/company/aligned-tech" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;color:#fff"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.aligned-tech.com/" target="_blank" rel="noopener" aria-label="Website" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;color:#fff"><i class="fas fa-globe"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">AI Chatbot Development</a>
+        <a href="#services">WhatsApp Bots</a>
+        <a href="#services">Voice AI</a>
+        <a href="#services">Custom AI Agents</a>
+        <a href="#services">AI Automation</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p><i class="fas fa-phone"></i> <a href="tel:+97466714112" onclick="trackPhoneCall()">+974 6671 4112</a></p>
+        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/97466714112" target="_blank" rel="noopener" onclick="trackWhatsApp()">WhatsApp Chat</a></p>
+        <p><i class="fas fa-globe"></i> <a href="https://www.aligned-tech.com/" target="_blank" rel="noopener">aligned-tech.com</a></p>
+        <p><i class="fas fa-location-dot"></i> Serving Qatar &amp; MENA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Aligned Tech. All rights reserved.</div>
+      <div><a href="https://www.aligned-tech.com/" target="_blank" rel="noopener">Privacy</a> &nbsp;·&nbsp; <a href="https://www.aligned-tech.com/" target="_blank" rel="noopener">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile sticky bar -->
+<div class="mobile-cta-bar">
+  <a href="tel:+97466714112" class="btn btn-dark" onclick="trackPhoneCall()"><i class="fas fa-phone"></i> Call</a>
+  <a href="https://wa.me/97466714112" class="btn btn-whatsapp" target="_blank" rel="noopener" onclick="trackWhatsApp()"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="#lead-form" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book</a>
+</div>
+
+<!-- WhatsApp floating (desktop) -->
+<a href="https://wa.me/97466714112?text=Hi%20Aligned%20Tech%2C%20I%27d%20like%20to%20know%20more%20about%20AI%20chatbot%20development."
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" onclick="trackWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// ====== HEADER SCROLL ======
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ====== YEAR ======
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ====== FAQ ACCORDION ======
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-question');
+  btn.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => { if(i!==item) i.classList.remove('open'); });
+    item.classList.toggle('open', !open);
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+});
+
+// ====== REVEAL ON SCROLL ======
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.service-card,.process-step,.why-feature,.review-card,.stat-item').forEach(el => {
+  el.classList.add('reveal'); io.observe(el);
+});
+
+// ====== STAT COUNTERS ======
+const countIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    const target = +el.dataset.count;
+    const dur = 1400, start = performance.now();
+    function tick(t){
+      const p = Math.min(1, (t-start)/dur);
+      el.textContent = Math.floor(p*target);
+      if(p<1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+    countIO.unobserve(el);
+  });
+},{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+// ====== GET UTM / SOURCE ======
+function getSource(){
+  const p = new URLSearchParams(window.location.search);
+  const utm = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid']
+    .map(k => p.get(k) ? k+'='+p.get(k) : null).filter(Boolean).join('&');
+  return utm || document.referrer || 'direct';
+}
+
+// ====== LEAD FORM SUBMIT ======
+async function submitLead(form, successEl, errorEl){
+  successEl.classList.remove('success'); successEl.style.display='none';
+  errorEl.classList.remove('error'); errorEl.style.display='none';
+  const btn = form.querySelector('button[type="submit"]');
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+  const fd = new FormData(form);
+  const payload = {
+    full_name: fd.get('full_name'),
+    email: fd.get('email'),
+    phone: fd.get('phone'),
+    company: fd.get('company') || '',
+    service_interest: fd.get('service_interest') || 'Not sure - need consultation',
+    message: fd.get('message') || '',
+    source: getSource(),
+    submitted_at: Date.now()
+  };
+
+  // Basic validation
+  if(!payload.full_name || !payload.email || !payload.phone){
+    errorEl.classList.add('error'); errorEl.style.display='block';
+    btn.disabled = false; btn.innerHTML = originalHTML; return;
+  }
+
+  try{
+    const res = await fetch('/api/lead', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error('bad status');
+    // Conversion tracking
+    if(typeof trackLeadForm === 'function') trackLeadForm();
+    // Success
+    successEl.classList.add('success'); successEl.style.display='block';
+    form.reset();
+    btn.innerHTML = '<i class="fas fa-check"></i> Sent! We\'ll call you soon';
+    setTimeout(()=>{ btn.disabled=false; btn.innerHTML = originalHTML; },3500);
+    // Optionally redirect to thank-you page:
+    setTimeout(()=> window.location.href = 'thank-you.html', 1800);
+  }catch(err){
+    console.warn('Lead submit failed, falling back:', err);
+    // Fallback: mailto so client never loses a lead
+    const subject = encodeURIComponent('New Qatar AI Lead: ' + payload.full_name);
+    const body = encodeURIComponent(
+      'Name: '+payload.full_name+'\n'+
+      'Email: '+payload.email+'\n'+
+      'Phone: '+payload.phone+'\n'+
+      'Company: '+payload.company+'\n'+
+      'Service: '+payload.service_interest+'\n'+
+      'Message: '+payload.message+'\n'+
+      'Source: '+payload.source
+    );
+    // Replace CLIENT_EMAIL with the real email once provided
+    window.location.href = 'mailto:info@aligned-tech.com?subject='+subject+'&body='+body;
+    errorEl.classList.add('error'); errorEl.style.display='block';
+    btn.disabled = false; btn.innerHTML = originalHTML;
+  }
+}
+
+document.getElementById('leadForm').addEventListener('submit', e => {
+  e.preventDefault();
+  submitLead(e.target, document.getElementById('formSuccess'), document.getElementById('formError'));
+});
+document.getElementById('leadForm2').addEventListener('submit', e => {
+  e.preventDefault();
+  submitLead(e.target, document.getElementById('formSuccess2'), document.getElementById('formError2'));
+});
+</script>
+
+</body>
+</html>

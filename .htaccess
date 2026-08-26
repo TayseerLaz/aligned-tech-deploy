@@ -1,0 +1,117 @@
+# Aligned Tech — cPanel / Apache config
+# Purpose: SPA routing + security headers + caching + compression
+
+# Serve index.html when a directory is requested (fixes /qatar-ai-chatbot/)
+DirectoryIndex index.html
+
+# 1) 301 Redirects — legacy WordPress URLs → new site structure
+# These old paths returned 403 after the WP→React migration; redirects preserve
+# Google rankings + backlink equity. Source: AlignedTech_SEO_Tracker_v2 (Glimmers, 11 May 2026).
+# mod_alias runs before mod_rewrite, so these fire before the SPA fallback below.
+<IfModule mod_alias.c>
+  # — Old service pages (3) —
+  Redirect 301 /cloud-solutions/ https://www.aligned-tech.com/services/cloud-solutions
+  Redirect 301 /web-mobile-development/ https://www.aligned-tech.com/services/web-mobile-development
+  Redirect 301 /search-engine-optimization/ https://www.aligned-tech.com/services
+
+  # — Old blog posts → AI Automation service (6) —
+  Redirect 301 /automate-customer-service-ai-guide/ https://www.aligned-tech.com/services/ai-automation
+  Redirect 301 /what-is-ai-business-mena/ https://www.aligned-tech.com/services/ai-automation
+  Redirect 301 /ai-how-can-it-help-my-business-in-mena/ https://www.aligned-tech.com/services/ai-automation
+  Redirect 301 /business-ai-automation-mena-guide/ https://www.aligned-tech.com/services/ai-automation
+  Redirect 301 /how-can-businesses-use-ai-tools-to-automate-repetitive-tasks/ https://www.aligned-tech.com/services/ai-automation
+  Redirect 301 /integrating-smart-tools-for-business-efficiency-in-mena/ https://www.aligned-tech.com/services/ai-automation
+
+  # — Old blog posts → WhatsApp Bot Building service (4) —
+  Redirect 301 /top-ai-whatsapp-chatbots-uae-ksa/ https://www.aligned-tech.com/services/whatsapp-bot-building
+  Redirect 301 /meta-integration-review-2026-features-verdict/ https://www.aligned-tech.com/services/whatsapp-bot-building
+  Redirect 301 /why-global-teams-are-embracing-whatsapp-business-automation/ https://www.aligned-tech.com/services/whatsapp-bot-building
+  Redirect 301 /how-ai-chatbots-are-transforming-customer-support-across-the-gulf/ https://www.aligned-tech.com/services/whatsapp-bot-building
+
+  # — Old blog posts → IT Infrastructure service (5) —
+  Redirect 301 /what-are-the-most-common-it-and-cloud-implementation-mistakes/ https://www.aligned-tech.com/services/it-infrastructure
+  Redirect 301 /common-mistakes-in-it-cloud-implementation/ https://www.aligned-tech.com/services/it-infrastructure
+  Redirect 301 /it-support-checklist-for-growing-companies-in-the-gulf/ https://www.aligned-tech.com/services/it-infrastructure
+  Redirect 301 /top-5-signs-your-business-needs-managed-it-services/ https://www.aligned-tech.com/services/it-infrastructure
+  Redirect 301 /why-mena-businesses-need-proactive-it-support-in-2025/ https://www.aligned-tech.com/services/it-infrastructure
+
+  # — Old blog posts → Cloud Solutions service (3) —
+  Redirect 301 /top-cloud-challenges-for-african-businesses-and-how-to-overcome-them/ https://www.aligned-tech.com/services/cloud-solutions
+  Redirect 301 /how-scalable-cloud-hosting-drives-business-growth-in-emerging-markets/ https://www.aligned-tech.com/services/cloud-solutions
+  Redirect 301 /benefits-of-moving-your-business-to-the-cloud-in-mena-africa/ https://www.aligned-tech.com/services/cloud-solutions
+
+  # — Old blog posts → Web & Mobile Development service (3) —
+  Redirect 301 /web-development-trends-for-mena-enterprises/ https://www.aligned-tech.com/services/web-mobile-development
+  Redirect 301 /top-mobile-app-features-for-the-gulf-market-in-2025/ https://www.aligned-tech.com/services/web-mobile-development
+  Redirect 301 /why-responsive-web-design-is-crucial-for-businesses-in-africa/ https://www.aligned-tech.com/services/web-mobile-development
+
+  # — Old blog posts with no service match → /blogs index (12) —
+  Redirect 301 /ai-smes-gulf-competition/ https://www.aligned-tech.com/blogs
+  Redirect 301 /data-privacy-ai-middle-east/ https://www.aligned-tech.com/blogs
+  Redirect 301 /future-ai-middle-east-trends/ https://www.aligned-tech.com/blogs
+  Redirect 301 /cybersecurity-services-mena-securing-businesses-against-regional-cyber-threats/ https://www.aligned-tech.com/blogs
+  Redirect 301 /protect-remote-workers-from-cyber-threats/ https://www.aligned-tech.com/blogs
+  Redirect 301 /how-can-seo-help-businesses-in-the-tech-sector-attract-more-local-clients/ https://www.aligned-tech.com/blogs
+  Redirect 301 /the-role-of-seo-in-digital-transformation-for-gulf-startups/ https://www.aligned-tech.com/blogs
+  Redirect 301 /data-breaches-are-rising-heres-how-to-protect-your-network-in-2025/ https://www.aligned-tech.com/blogs
+  Redirect 301 /a-beginners-guide-to-business-cybersecurity-in-the-gulf/ https://www.aligned-tech.com/blogs
+  Redirect 301 /seo-checklist-for-it-cloud-companies-in-mena/ https://www.aligned-tech.com/blogs
+  Redirect 301 /cyber-threats-in-mena-what-every-business-owner-should-know/ https://www.aligned-tech.com/blogs
+  Redirect 301 /how-seo-can-drive-growth-for-tech-companies-in-africa/ https://www.aligned-tech.com/blogs
+</IfModule>
+
+# 2) Canonical host: force HTTPS + www so every request lands on https://www.aligned-tech.com
+# This matches the <link rel="canonical"> declared on every page and stops duplicate-content
+# indexing of http:// or non-www variants.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # http → https
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # non-www → www (skips the qatar subdomain which has its own canonical)
+  RewriteCond %{HTTP_HOST} ^aligned-tech\.com$ [NC]
+  RewriteRule ^ https://www.aligned-tech.com%{REQUEST_URI} [L,R=301]
+
+  # Explicit pass-through for static subsites (Qatar landing page etc.)
+  RewriteRule ^qatar-ai-chatbot(/.*)?$ - [L]
+
+  # Route everything else through index.html for React Router
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# 3) Gzip compression (faster loads + better SEO)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml application/xml text/xml
+</IfModule>
+
+# 4) Long-term caching for static assets (Vite filenames are hashed, so safe)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# 5) Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(self), camera=()"
+</IfModule>
+
+# 6) Custom 404 falls through to SPA (handled by section 2)
+ErrorDocument 404 /index.html
